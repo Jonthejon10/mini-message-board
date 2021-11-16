@@ -1,0 +1,12 @@
+extends layout
+block content
+    header 
+        h1= 'Write your own message !'
+        a(href='/') Go back ?
+
+    main
+        section.form-container
+            form(method='POST' action='/new')
+                input(type='text' name='msgAuthor' placeholder='Author name')
+                textarea(type='text' name='msgText' placeholder='Enter your text' rows='10')
+                button(type='submit') Submit

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  header 
+    h1= 'Message board'
+    a(href='/new') Create a post
+
+  main.index-container
+    each message in messages
+      div.message-card 
+        h2= message.text
+        p= `By ${message.user}`
+        p= `${format(message.added, new Date(), {addSuffix: true})}`
